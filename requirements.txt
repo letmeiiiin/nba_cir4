@@ -1,0 +1,7 @@
+ipywidgets
+selenium
+webdriver-manager
+pandas
+aiohttp
+aiomultiprocess
+lxml

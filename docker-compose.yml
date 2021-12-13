@@ -1,0 +1,16 @@
+version: '3.0'
+services:
+  jupyter:
+    build: .
+    container_name: projetnba
+    ports:
+      - "8888:8888"
+    volumes:
+      - "./data:/home/jovyan/app/data"
+      - "./notebooks:/home/jovyan/app/notebooks"
+      - "./scripts:/home/jovyan/app/scripts"
+    environment:
+      - GRANT_SUDO=yes
+      - CHOWN_HOME=yes
+      - JUPYTER_TOKEN=""
+    command: ["jupyter", "notebook", "--no-browser", "--port", "8888", "--ip", "0.0.0.0", "--allow-root", "--NotebookApp.token=''", "--NotebookApp.password=''"]
